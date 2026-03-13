@@ -1,0 +1,13 @@
+.wrapper {
+  /* aspect-ratio: 1/1; */
+  background: url(./assets/bbg.jpg) no-repeat center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.container {
+  height: 674px;
+  width: 352px;
+  border: 5px solid rgb(22, 167, 17);
+  border-radius: 20px;
+}
