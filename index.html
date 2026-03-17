@@ -50,7 +50,7 @@
 
         <main class="homescreen h-100 p-2 position-relative">
           <div
-            class="slide-container border border-3 border-dark bg-white p-3 rounded-4 shadow position-relative"
+            class="slide-container border border-3 bg-white border-dark p-3 rounded-4 shadow position-relative"
             style="top: 400px"
           >
             <input
@@ -69,18 +69,61 @@
 
         <!-- app screen -->
 
-        <div
-          class="appscreen bg-dark h-100 text-white d-flex flex-column align-items-center pt-5"
+        <main
+          class="appscreen bg-dark p-2 pt-5"
+          style="height: 550px; display: none"
         >
-          <button
-            class="contact-btn btn p-0 border-0 bg-transparent text-white"
-          >
-            <i class="bi bi-person-rolodex"></i>
-          </button>
-          <span>Contacts</span>
-        </div>
+          <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column align-items-center p-2 rounded">
+              <i
+                class="bi bi-person-rolodex text-danger fs-1 bg-white px-2 rounded"
+                onclick="displayContactScreen()"
+              ></i>
+              <span class="text-white">Contact</span>
+            </div>
+          </div>
+        </main>
+
+        <!-- contact List screen -->
+
+        <main class="contactscreen" style="height: 90%; display: none">
+          <div class="contactlistcontainer">
+            <!-- title.. -->
+            <h2 class="p-2 fw-bolder text-white">Contacts</h2>
+            <!-- search -->
+
+            <div class="header mt-2 p-2 position-relative">
+              <i
+                class="bi bi-search position-absolute fs-4 m-1 text-secondary"
+              ></i>
+              <input
+                type="search"
+                id="search"
+                class="form-control rounded-pill"
+                placeholder="Search contact"
+              />
+            </div>
+
+            <!-- spinner -->
+            <div class="bg-light w-25 rounded m-auto p-3 showSpinner">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+
+            <!-- contact-List -->
+
+            <div id="list" class="bg-light pt-2" style="display: none">
+              <div class="p-2"><span id="userCount">0</span> contacts</div>
+
+              <div class="accordion mt-2" id="userAccordion"></div>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
+
+    <!-- bootstrap javascrit -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
